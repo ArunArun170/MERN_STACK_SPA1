@@ -1,0 +1,192 @@
+/* client/src/App.css */
+:root {
+  --primary-color: #2563EB; /* Bright Blue */
+  --light-background: #f7f7f7; /* Off-White */
+  --text-color: #333;
+}
+
+/* Base and Layout Styling */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--light-background);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+/* C. Layout: Container must be centered and max-width 600px */
+.app-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+/* Input Area */
+.add-task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.add-task-form input[type="text"] {
+  flex-grow: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.add-task-btn {
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.add-task-btn:hover {
+  background-color: #1d4ed8; 
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.filter-bar button {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: var(--text-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+/* Highlight the active filter */
+.filter-bar button.active-filter {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 17px;
+  gap: 15px;
+}
+
+.task-list li:last-child {
+  border-bottom: none;
+}
+
+.task-list input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  min-width: 20px; 
+}
+
+.task-title {
+  flex-grow: 1; 
+  cursor: pointer;
+}
+
+/* Task Items: Completed tasks styling */
+.completed-task .task-title {
+  text-decoration: line-through; /* Strikethrough */
+  opacity: 0.6; /* Muted opacity */
+}
+
+/* Edit in Place Input */
+.edit-input {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: none;
+  border: none;
+  color: #e03131;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: auto; 
+  transition: color 0.2s ease;
+}
+
+.delete-btn:hover {
+  color: #ff0000;
+}
+
+.error-message {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.no-tasks {
+    justify-content: center;
+    color: #999;
+    font-style: italic;
+    border-bottom: none !important;
+}
+
+/* C. Layout: 100% responsive on mobile devices */
+@media (max-width: 650px) {
+  body {
+    padding: 0;
+  }
+  .app-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .add-task-form {
+    flex-direction: column;
+  }
+}

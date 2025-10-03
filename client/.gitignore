@@ -1,0 +1,33 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# --------------------
+# 1. DEPENDENCIES (MUST BE IGNORED)
+# --------------------
+# Ignores all node_modules folders, regardless of location
+node_modules/
+client/node_modules/
+server/node_modules/
+.pnp
+.pnp.js
+
+# --------------------
+# 2. BUILD ARTIFACTS
+# --------------------
+# Ignores compiled code/production files
+/build
+/dist
+/client/build
+/client/dist
+
+# --------------------
+# 3. SECRETS & LOGS (CRUCIAL)
+# --------------------
+# Local environment files (containing sensitive passwords and keys)
+.env
+/server/.env
+
+# Log files and cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
